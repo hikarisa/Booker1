@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1{
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.new{
+  display: block
+}
+
+.book-box{
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.list{
+  list-style: none;
+  display: block;
+  margin: 0 20px;
+  font-weight: bold
+}

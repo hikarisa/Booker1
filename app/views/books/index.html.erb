@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<body>
+  <header>
+    <h1>Books</h1>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </header>
+
+  <nav>
+    <div cladd="book-wrap">
+    <% @books.each do |book| %>
+      <div class="book-box">
+        <ul class="list">Title</ul>
+          <span class="book-title"><%= book.title %></span>
+      </div>
+
+      <div class="book-box">
+        <ul class="list">Body</ul>
+          <span class="book-body"><%= book.body %></span>
+      </div>
+    <% end %>
+    </div>
+  </nav>
+
+  <h2>New book</h2>
+  <% if @book.errors.any? %>
+    <%= @book.errors.count %>件のエラーが発生しました
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+
+
+  <!-- form_with部分 -->
+  <div class="new">
+    <%= form_with model: @book, url: '/books', method: :post do |f| %>
+      <ul>Title</ul>
+      <%= f.text_field :title %>
+
+      <ul>Body</ul>
+      <%= f.text_area :body %>
+
+      <div>
+        <%= f.submit 'Create Book' %>
+      </div>
+
+    <% end %>
+  </div>
+
+
+
+
+</body>
