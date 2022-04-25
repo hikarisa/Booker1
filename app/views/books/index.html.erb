@@ -7,15 +7,15 @@
 
   <nav>
     <div cladd="book-wrap">
+      <ul class="list">Title</ul>
+      <ul class="list">Body</ul>
     <% @books.each do |book| %>
       <div class="book-box">
-        <ul class="list">Title</ul>
           <span class="book-title"><%= book.title %></span>
-      </div>
-
-      <div class="book-box">
-        <ul class="list">Body</ul>
           <span class="book-body"><%= book.body %></span>
+          <%= link_to "show", book_path(book) %>
+          <%= link_to "edit", edit_book_path(book) %>
+          <%= link_to "destroy", book_path(book), method: :destroy %>
       </div>
     <% end %>
     </div>

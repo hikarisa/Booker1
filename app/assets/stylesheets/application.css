@@ -29,15 +29,21 @@ h1{
   display: block
 }
 
+.book-wrap{
+  list-style: none;
+  display: block;
+  margin: 0 20px;
+}
+
 .book-box{
   list-style: none;
-  display: inline-block;
+  display: block;
   margin: 0 20px;
 }
 
 .list{
   list-style: none;
-  display: block;
+  display: inline-block;
   margin: 0 20px;
   font-weight: bold
 }
