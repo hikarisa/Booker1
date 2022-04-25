@@ -46,3 +46,27 @@ h2 {
 .create-box{
   margin-top: 10px;
 }
+
+.error-box{
+  border: 2px solid;
+  border-color: rgb(255, 0, 0);
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  width: 450px;
+}
+
+.error-red{
+  margin: 0px;
+  background-color: rgb(255,0,0);
+  color: rgb(255,255,255);
+  
+}
+
+.error-message{
+  text-align: center;
+  margin: 30px auto;
+}
+
+.newr-text{
+  
+}

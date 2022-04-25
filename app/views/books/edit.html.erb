@@ -4,7 +4,16 @@
     <h1>Editing Book</h1>
     <%= stylesheet_link_tag 'show', media: 'all', 'data-turbolinks-track': 'reload' %>
   </header>
-  
+  <% if @book.errors.any? %>
+  <div class="error-box">
+      <p class="error-red"><%= @book.errors.count %>errors prohibited this book from being saved:</p>
+      <ul class="errors">
+        <% @book.errors.full_messages.each do |message| %>
+          <p class="error-message">・<%= message %></p>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
     <%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
     
       <ul>Title</ul>

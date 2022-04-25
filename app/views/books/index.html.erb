@@ -29,20 +29,23 @@
 
   <h2>New book</h2>
   <% if @book.errors.any? %>
-    <%= @book.errors.count %>errors prohibited this book from being saved:
-    <ul>
-      <% @book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  <% end %>
+  <div class="error-box">
+      <p class="error-red"><%= @book.errors.count %>errors prohibited this book from being saved:</p>
+      <ul class="errors">
+        <% @book.errors.full_messages.each do |message| %>
+          <p class="error-message">・<%= message %></p>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+    
 
 
 
   <!-- form_with部分 -->
   <div class="new">
     <%= form_with model: @book, url: '/books', method: :post do |f| %>
-      <ul>Title</ul>
+      <ul class="new-text">Title</ul>
       <%= f.text_field :title %>
 
       <ul class="new-body">Body</ul>
@@ -54,7 +57,6 @@
 
     <% end %>
   </div>
-cd
 
 
 
