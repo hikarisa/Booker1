@@ -1,12 +1,22 @@
+<!DOCTYPE html>
 <body>
-  <ul>Title:</ul>
-  <p></p>
-
-  <ul>Body:</ul>
-  <p></p>
+  <header>
+    <%= stylesheet_link_tag 'show', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </header>
   
-  <%= link_to "edit", edit_book_path(@book) %>
-  <p>|</p>
-  <%= link_to "back", books_path(@book) %>
+  <p>
+    <strong>Title:</strong>
+    <%= @book.title %>
+  </p>
+    
+  <p>
+    <strong>Body:</strong>
+    <%= @book.body %>
+  </p>
+    
+  
+  <%= link_to "Edit", edit_book_path(@book) %>
+  |
+  <%= link_to "Back", books_path(@book) %>
 </body>
 
