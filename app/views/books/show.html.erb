@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <body>
-  <p class="flash"><%=   flash[:notice]  %></p>
+  <p class="flash"><%=  flash[:notice]  %></p>
   <header>
     <%= stylesheet_link_tag 'show', media: 'all', 'data-turbolinks-track': 'reload' %>
   </header>
@@ -18,6 +18,6 @@
   
   <%= link_to "Edit", edit_book_path(@book) %>
   |
-  <%= link_to "Back", books_path(@book) %>
+  <%= link_to "Back", books_path(@books) %>
 </body>
 

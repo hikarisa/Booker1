@@ -15,23 +15,23 @@
     <% end %>
   </div>
     <%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
-    
+
       <ul>Title</ul>
       <%= f.text_field :title %>
-      
+
       <ul>Body</ul>
       <%= f.text_area :body %>
-      
+
       <div class="block">
         <%= f.submit 'Update Book' %>
       </div>
-        
+
       <div>
         <%= link_to "show", book_path(@book) %>
         |
-        <%= link_to "back", books_path(@book) %>
+        <%= link_to "back", books_path(@books) %>
       </div>
-        
+
     <% end %>
-    
+
 </body>

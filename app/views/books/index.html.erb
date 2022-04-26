@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <body>
+  <p class="flash"><%=   flash[:notice]  %></p>
   <header>
     <h1>Books</h1>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -19,7 +20,7 @@
         <td class="table-link">
           <%= link_to "show", book_path(book) %>
           <%= link_to "edit", edit_book_path(book) %>
-          <%= link_to "destroy", book_path(book), method: :delete %>
+          <%= link_to "Destroy", book_path(book), method: :delete %>
         </td>
           
       </tr>
@@ -41,15 +42,18 @@
     
 
 
-
   <!-- form_with部分 -->
   <div class="new">
     <%= form_with model: @book, url: '/books', method: :post do |f| %>
-      <ul class="new-text">Title</ul>
-      <%= f.text_field :title %>
+      <div class="field">
+        <ul class="new-text">Title</ul>
+        <%= f.text_field :title %>
+      </div>
 
-      <ul class="new-body">Body</ul>
-      <%= f.text_area :body %>
+      <div class="field">
+        <ul class="new-body">Body</ul>
+        <%= f.text_area :body %>
+      </div>
 
       <div class="create-box">
         <%= f.submit 'Create Book' %>
